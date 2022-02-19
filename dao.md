@@ -1,6 +1,6 @@
 # Krebit DAO
 
-> **What is a DAO?**
+?> **What is a DAO?**
 
 ## Manifesto
 

@@ -10,7 +10,7 @@ Krebit is an identity verification protocol, DAO and marketplace for Web3 Verifi
 
 ## W3C Verifiable Credentials
 
-Verifiable Credentials are verifications made by Issuers about off-chain Claims stored in [Ceramic](https://ceramic.network/), and registered on-chain in the KRB [Ethereum](https://ethereum.org/) token.
+A Krebit Verifiable Credential is a verification made by an Issuer about an off-chain Claim stored in [Ceramic](https://ceramic.network/), and registered on-chain in the KRB [Ethereum](https://ethereum.org/) token.
 
 ## Krebit Protocol
 
