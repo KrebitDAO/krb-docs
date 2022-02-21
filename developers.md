@@ -204,7 +204,9 @@ eip712vc.verifyEIP712Credential(
 
 ## Contract Subgraph
 
-The [krb-subgraph](https://github.com/KrebitDAO/krb-subgraph) repository hosts the KRB Token subgraph, based on [OpenZeppelin subgraphs].
+How to export Krebit reputation to web2 and web3 sites?
+
+The [krb-subgraph](https://github.com/KrebitDAO/krb-subgraph) repository hosts the KRB Token subgraph, based in [OpenZeppelin subgraphs], that can be used to easily query the KRB token balances of a user, as well as all the Verified Credentials and status from both an Ethereum Address, as well as an issuer or credential subject DID.
 
 [openzeppelin subgraphs]: https://docs.openzeppelin.com/subgraphs/0.1.x/
 

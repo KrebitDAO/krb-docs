@@ -8,7 +8,11 @@
 
 - It manages the available and staked balance, as well as the reputation or verifiable credential registry.
 
+- Changes to the KRB token contract parameters are governed by voted decisions in an open DAO.
+
 - It also limits tokens to only be transferable between accounts with a min balance, to encourage reputation building.
+
+?> Unlike regular ERC20 tokens, reputation cannot be freely transferred between accounts, as it represents an appraisal of the account’s activities by their peers. Reputation must therefore be earned by direct action within the community.
 
 ## Reputation Supply
 
@@ -31,6 +35,8 @@ Inspired in the [CoreTrust1](https://dl.acm.org/doi/10.1145/2389176.2389208) mod
 This approach can construct a Web3 of Trust from the interactions in a social network and infer trust values by making use of both generally agreed reliability and subjective individuality in the network.
 
 ## Upgrades
+
+Krebit supports a Contract-Upgrade mechanism with [OpenZeppelin UUPSUpgradeable Proxy](https://docs.openzeppelin.com/upgrades-plugins/1.x/) pattern, controlled by the governance DAO.
 
 ?> **Current Deployments** The [.openzeppelin/rinkeby.json](https://github.com/KrebitDAO/krb-contracts/blob/main/.openzeppelin/rinkeby.json) file in [krb-contracts](https://github.com/KrebitDAO/krb-contracts) keeps track of the current deployed version and previously upgraded implementations
 

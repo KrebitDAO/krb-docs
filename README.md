@@ -32,6 +32,8 @@ A verifier with enough KRB Tokens validates the data, signs the Verifiable Crede
 
 Verifiable Credentials can be revoked by an Issuer, they can expire, and also be deleted by the credential subject. In all these cases both the issuer and subject rewards are also burnt.
 
+The Verifiable Credentials expiration date ensures that reputation scores represent recent contributions to Krebit.
+
 Learn more:
 
 - [Get Verified](get_verified#claim-credentials)
@@ -39,7 +41,11 @@ Learn more:
 
 ## Krebit DAO
 
-The Krebit protocol is governed by an open DAO, where any member can **dispute a Verifiable Credential via proposal**. Once raised, disputes must be resolved by voting and the KRB rewards could get burnt and the verifier’s stake could get slashed.
+The Krebit protocol is governed by an open DAO, where any member can **dispute a Verifiable Credential via proposal**.
+
+This allows the platform to be operated with maximal transparency, minimal required trust in centralized operators, and no centralized attack surfaces.
+
+Once raised, disputes must be resolved by voting and the KRB rewards could get burnt and the verifier’s stake could get slashed.
 
 Learn more:
 
