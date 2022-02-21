@@ -30,6 +30,8 @@ A verifier with enough KRB Tokens validates the data, signs the Verifiable Crede
 
 **Both users and attestators are rewarded when users register the Verifiable Credential on-chain in the $KRB Token ethereum smart contract.**
 
+Verifiable Credentials can be revoked by an Issuer, they can expire, and also be deleted by the credential subject. In all these cases both the issuer and subject rewards are also burnt.
+
 Learn more:
 
 - [Get Verified](get_verified#claim-credentials)

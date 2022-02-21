@@ -2,7 +2,27 @@
 
 ## Participate
 
+KRB token holders can take a direct part in governing the Krebit DAO, and share dividends earned from the marketplace commissions:
+
+- Decision via vote is infrequent in Krebit because it is slow and carries a high coordination cost; costs which are justified in the (hopefully rare) case of dispute resolution.
+
+- Changes in the DAO can be triggered via the motions process to optimistically enact governance decisions made off-chain.
+
+- Proposals can be submitted for consideration at any time and have an explicit expiration.
+
+- To be able to create a motion, the user must have a minimum number of KRB. This basic minimum required to propose a change prevents users from spamming motions.
+
+- All marketplace commissions will go to the Krebit DAO’s treasury.
+
+- A fixed percentage will be separated for paying the network administration and advocacy/publicity to the Krebit Council/Managers.
+
+- The DAO will vote on paying dividends or making investments/donations.
+
 ## Dispute a Credential
+
+Any member can dispute a Verifiable Credential via proposal.
+
+Once a dispute has been raised and settled one way or the other, the user on the losing side will lose reputation (slashed KRB) and the one on the winning side will gain it (minted KRB).
 
 ## Manifesto
 
@@ -26,10 +46,20 @@ Krebit mitigates all of them and creates a **pseudonymous economy** for users to
 
 6. Any member can also **dispute a Verifiable Credential via proposal** on the Krebit DAO. Once raised, disputes must be resolved by voting and the $KRB rewards could get burnt and the verifier’s stake could get slashed.
 
-7. Krebit will use **scalable, decentralized, privacy preserving identity systems** running on top of off-chain, open, data-models and the main public blockchains.
+7. Verifiable Credentials can be revoked by an Issuer, they can expire, and also be deleted by the credential subject. In all these cases both the issuer and subject rewards are also burnt.
 
-8. Users will be able to manage their identities and other dApps will be able to obtain real-time reputation of an identity owner across different blockchains. By using this **open data-model**, other dApps will also be able to create claims, verify them and register them, all from common known identities.
+8. Krebit will use **scalable, decentralized, privacy preserving identity systems** running on top of off-chain, open, data-models and the main public blockchains.
 
-9. **Krebit smart contracts will be deployed on EVM compatible blockchains**, and there will be bridges to other blockchains, and verified oracles for web2 sites, to ensure future aggregation of Decentralized Reputation (DeRep) across a multi-chain ecosystem.
+9. Users will be able to manage their identities and other dApps will be able to obtain real-time reputation of an identity owner across different blockchains. By using this **open data-model**, other dApps will also be able to create claims, verify them and register them, all from common known identities.
 
-10. Krebit is not going to reinvent the wheel. Instead, we intend to use the best existing tools and best practices for each component of the architecture.
+10. **Krebit smart contracts will be deployed on EVM compatible blockchains**, and there will be bridges to other blockchains, and verified oracles for web2 sites, to ensure future aggregation of Decentralized Reputation (DeRep) across a multi-chain ecosystem.
+
+11. Krebit is not going to reinvent the wheel. Instead, we intend to use the best existing tools and best practices for each component of the architecture.
+
+## About Krebit Inc.
+
+Krebit Inc. (a Delaware S Corp) operates the Krebit DApp and promotes the Krebit DAO.
+
+The Krebit Inc. company was formed to house the Krebit community's key intangible assets, such as trademarks and code copyrights, and it operates solely on the basis of objective and rigid statutes that define its mandate.
+
+Its purpose is to safeguard what cannot be technologically decentralized and bootstrapping the system to ensure that it can survive as a fully decentralized organization that can successfully thrive on its own.
