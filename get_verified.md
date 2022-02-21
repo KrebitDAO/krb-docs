@@ -12,4 +12,10 @@ With Krebit you can verify your identity only once, and reuse it everywhere acro
 
 **Step 4:** Get the VerifiableCredential from the Issuer and register it on-chain to earn KRB tokens!
 
+## Login with Wallet
+
 ## Claim Credentials
+
+## Request Verification
+
+## Register Verifiable Credential

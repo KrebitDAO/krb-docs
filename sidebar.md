@@ -2,7 +2,7 @@
 - [Get Verified](get_verified)
 - [Become an Issuer](issuer)
 - [KRB Token](krb)
-- [Developers](developers)
+- [Web3 Developers](developers)
 - [Governance DAO](dao)
 - [Glossary](_glossary)
 - **Links**

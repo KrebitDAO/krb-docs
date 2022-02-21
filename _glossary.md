@@ -1,8 +1,8 @@
 # Glossary
 
-##### Ceramic Network
+##### Ceramic
 
-Ceramic is a decentralized, open source platform for creating, hosting, and
+[Ceramic](https://ceramic.network/) is a decentralized, open source platform for creating, hosting, and
 sharing streams of data.
 
 ##### Claim
@@ -12,7 +12,7 @@ A claim is a statement about a subject, e.g. about their identity, location, acc
 ##### DAO
 
 A DAO (Decentralized Autonomous Organization) is a self-organizing online
-community that uses blockchain like Ethereum to manage its funds securely and make collective decisions on the future of the organization
+community that uses blockchains like Ethereum to manage its funds securely and make collective decisions on the future of the organization
 
 ##### DID
 
@@ -20,11 +20,11 @@ A DID(Decentralized Identifier) is a portable, globally unique, URL-based identi
 
 ##### Ethereum
 
-Ethereum is a decentralized, open-source blockchain with smart contract functionality. Ether is the native cryptocurrency of the platform.
+[Ethereum](http://ethereum.org) is a decentralized, open-source blockchain with smart contract functionality. Ether is the native cryptocurrency of the platform.
 
 ##### Self.Id
 
-Self.Id is a multi-platform identity protocol for web3 decentralized user profiles on top of the Ceramic Network.
+[Self.Id](https://self.id/) is a multi-platform identity protocol for web3 decentralized user profiles on top of the Ceramic Network.
 
 ##### Issuer
 
@@ -38,7 +38,11 @@ animals, and things. In many cases the holder of a verifiable credential is the 
 
 ##### ThreadDB
 
-ThreadDB is a secure, decentralized, p2p database built on IPFS and Libp2p.
+[ThreadDB](https://textile.io/) is a secure, decentralized, p2p database built on IPFS and Libp2p.
+
+##### KRB Token
+
+See [KRB Token](krb)
 
 ##### ERC-20 Token
 
@@ -46,7 +50,7 @@ A Token is a unit that represents value which can be bought, sold, or traded. ER
 
 ##### Verifiable Credential
 
-Is an attestation made by an Issuer to verify the validity of a claim. Credentials include an identifier and metadata to describe properties of the credential, such as the issuer, the expiry date, a public key to use for verification purposes, the revocation mechanism, etc. The metadata is signed cryptographically to prove who issued it.
+A [W3C Verifiable Credential](https://www.w3.org/TR/vc-data-model/) Is an attestation made by an Issuer to verify the validity of a claim. Credentials include an identifier and metadata to describe properties of the credential, such as the issuer, the expiry date, a public key to use for verification purposes, the revocation mechanism, etc. The metadata is signed cryptographically to prove who issued it.
 
 ##### Credentials Registry
 

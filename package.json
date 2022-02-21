@@ -1,0 +1,27 @@
+{
+  "name": "krb-docs",
+  "version": "0.1.0",
+  "description": "Krebit Protocol Docs",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrebitDAO/krb-docs.git"
+  },
+  "keywords": [
+    "Identity",
+    "Verifiable Credentials",
+    "Web3"
+  ],
+  "author": "Krebit Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KrebitDAO/krb-docs/issues"
+  },
+  "homepage": "https://github.com/KrebitDAO/krb-docs#readme",
+  "devDependencies": {
+    "docsify-cli": "^4.4.3"
+  }
+}

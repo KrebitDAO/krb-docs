@@ -1,8 +1,78 @@
-# Developers
+# Web3 Developers
 
-## Integrate in your App
+## Reputation in your dApp
+
+- **Let your users manage their identity Claims** [using Ceramic's datamodels and Self.ID](developers#ceramic-datamodels)
+
+- **Issue Krebit verifiable credentials** [using the EIP712-vc SDK](developers#eip712-vc-sdk)
+
+- **Register Verifiable credentials on-chain** [using the KRB-Token Smart Contract](krb)
+
+- **Check the aggregated reputation of an identity owner off-chain** [using the KRB-Token Subgraph](developers#contract-subgraph).
+
+### Use Case 1: Decentralized KYC/AML
+
+### Use Case 2: Restrict access to Adult/NSFW pages
+
+### Use Case 3: Anti-Sybil prevention
 
 ## Ceramic Datamodels
+
+Krebit uses Ceramic's Self.Id Decentralized Identity (DID) to enable users control their profiles and data-stores.
+
+?> The [ceramic/datamodels](https://github.com/KrebitDAO/datamodels) repository hosts the [Krebit] Credential Registry open data-model.
+
+Data models are open standards created by the community that form the basis of data composability on Ceramic. When multiple applications reuse the same data model, they get access to the same data-store.
+
+### Data Model
+
+The CredentialRegistry holds the list of claimed [ClaimedCredentials](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/ClaimedCredential.json) and the [VerifiableCredentials](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/VerifiableCredential.json) issued by the user:
+
+| Property | Description                             | Value                                                                                                                                                                        | Max Size | Required | Example |
+| -------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------- |
+| claimed  | List of claims made by this DID         | array of ceramic:// links to [ClaimedCredentials](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/ClaimedCredential.json) tiles       |          | false    |         |
+| issued   | List of attestations issued by this DID | array of ceramic:// links to [VerifiableCredentials](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/VerifiableCredential.json) tiles |          | false    |         |
+
+A [ClaimedCredentials](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/ClaimedCredential.json) represents a specific, factually-oriented claim that could be used as the Id and CredentialSubject of a Verifiable Credential.
+
+A [VerifiableCredentials](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/VerifiableCredential.json) is fact-checking review/attestation of claims made (or reported) in a Claim, following the [W3C-VC-datamodel](https://www.w3.org/TR/vc-data-model).
+
+### Installation
+
+```console
+$ npm install @self.id/web
+$ npm install @datamodels/credential-registry
+```
+
+### Login with Wallet to DID
+
+```javascript
+import { EthereumAuthProvider, SelfID } from "@self.id/web";
+import { model as credentialRegistryModel } from "@datamodels/credential-registry";
+
+// The following assumes there is an injected `window.ethereum` provider
+const addresses = await window.ethereum.request({
+  method: "eth_requestAccounts",
+});
+
+// The following configuration assumes your local node is connected to the Clay testnet
+const self = await SelfID.authenticate({
+  authProvider: new EthereumAuthProvider(window.ethereum, addresses[0]),
+  ceramic: "local",
+  connectNetwork: "testnet-clay",
+  credentialRegistryModel,
+});
+```
+
+### Storing Claims
+
+### Storing Verifiable Credentials
+
+Learn more:
+
+- [Ceramic Docs](https://developers.ceramic.network)
+- [Seld.ID SDK](https://developers.ceramic.network/reference/self-id/)
+- [DID DataStore](https://developers.ceramic.network/tools/glaze/did-datastore/)
 
 ## eip712-vc SDK
 
@@ -39,7 +109,7 @@ import {
 const eip712Domain = {
   name: "Krebit",
   version: "0.1", // Krebit protocol version
-  chainId: 4, //Rinkeby ethereum testnet
+  chainId: 4, //Rinkeby testnet
   verifyingContract: KRB_TOKEN_ADDRESS,
 };
 
