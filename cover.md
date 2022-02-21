@@ -2,7 +2,7 @@
 
 > Documentation for the [Krebit Protocol](https://krebit.id)
 
-Krebit is an open identity verification protocol, DAO and marketplace for Web3 Verifiable Credentials.
+[Krebit.id](https://krebit.id) is an open identity verification protocol, DAO and marketplace for Web3 Verifiable Credentials.
 
 [![Twitter](/img/twitter.png ":size=30")](https://twitter.com/KrebitDAO)
 [![Discord](/img/discord.png ":size=30")](https://discord.gg/y7sMYVjxrd)

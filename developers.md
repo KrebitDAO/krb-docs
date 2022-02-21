@@ -20,7 +20,7 @@
 
 Krebit uses Ceramic's Self.Id Decentralized Identity (DID) to enable users control their profiles and data-stores.
 
-?> The [ceramic/datamodels](https://github.com/KrebitDAO/datamodels) repository hosts the [Krebit] Credential Registry open data-model.
+?> The [ceramic/datamodels](https://github.com/ceramicstudio/datamodels/pull/32) repository hosts the [Krebit] Credential Registry open data-model.
 
 Data models are open standards created by the community that form the basis of data composability on Ceramic. When multiple applications reuse the same data model, they get access to the same data-store.
 
@@ -66,7 +66,16 @@ const self = await SelfID.authenticate({
 
 ### Storing Claims
 
+Sample streams:
+
+- fullName ClaimedCredential: https://documint.net/kjzl6cwe1jw148duwupih6l1fmqbncvkzquhiie407e1f5kkv5isxvjkig9u3ma
+- olderThan ClaimedCredential: https://documint.net/kjzl6cwe1jw14aph1ar5pxyvtlosvfr3h109pg26ucbzqil8an1w27tkgi6x674
+
 ### Storing Verifiable Credentials
+
+Sample VerifiableCredentials:
+
+- https://documint.net/kjzl6cwe1jw147ag9phrmzdcsmq2jiwhm6ijl8fa0k12v08zzmibg98tmk4jhg5
 
 Learn more:
 
