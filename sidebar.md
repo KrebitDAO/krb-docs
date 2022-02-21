@@ -10,7 +10,7 @@
   [Yellow Paper](https://ipfs.io/ipfs/QmacmL7Dwh1gW6ksyheyQwgGf6oDLoYPUgev5LKDt8xcXU?filename=Krebit%20YellowPaper%20v0.3.pdf)
   [Blog](https://publish0x.com/krebit)
 
-  [<img src="/img/github.png" alt="GitHub" height="20px">](https://github.com/KrebitDAO)
-  [<img src="/img/twitter.png" alt="Twitter" height="20px">](https://twitter.com/KrebitDAO)
-  [<img src="/img/discord.png" alt="Discord" height="20px">](https://discord.gg/y7sMYVjxrd)
-  [<img src="/img/gitcoin.png" alt="Gitcoin" height="20px">](https://gitcoin.co/grants/3522/krebit)
+  [![GitHub](/img/github.png ":size=20")](https://github.com/KrebitDAO)
+  [![Twitter](/img/twitter.png ":size=30")](https://twitter.com/KrebitDAO)
+  [![Discord](/img/discord.png ":size=30")](https://discord.gg/y7sMYVjxrd)
+  [![Gitcoin](/img/gitcoin.png ":size=30")](https://gitcoin.co/grants/3522/krebit)

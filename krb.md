@@ -34,6 +34,6 @@ This approach can construct a Web3 of Trust from the interactions in a social ne
 
 ?> **Current Deployments** The [.openzeppelin/rinkeby.json](https://github.com/KrebitDAO/krb-contracts/blob/main/.openzeppelin/rinkeby.json) file in [krb-contracts](https://github.com/KrebitDAO/krb-contracts) keeps track of the current deployed version and previously upgraded implementations
 
-## Contract Reference
+## Reference
 
 [filename](_krbToken.md ":include")
