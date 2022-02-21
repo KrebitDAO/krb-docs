@@ -1,5 +1,7 @@
 # Krebit DAO
 
+?>Testnet DAO: [Krebit Rinkeby-DAO on DAOhaus](https://app.daohaus.club/dao/0x4/0xbb79a51aa1d659d0b854018f2d5362995c80fb6d)
+
 ## Participate
 
 KRB token holders can take a direct part in governing the Krebit DAO, and share dividends earned from the marketplace commissions:
