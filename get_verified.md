@@ -14,7 +14,31 @@ With Krebit you can verify your identity only once, and reuse it everywhere acro
 
 ## Login with Wallet
 
-!> **Where is my Krebit Wallet stored?** We use the Local Storage in your browser to store and encrypt the Krebit Wallet information locally with a twelve-word seed phrase and a password you provide, that we never send to our servers. Please read the full Terms of Service and Privacy Policy for more details. Local Storage, including Javascript-enabled localStorage, is a typical way for a website to store a small file of letters and numbers in your browser. Local Storage are deleted when the website that stored them deletes them. You can also delete Local Storage from your browser at any time you like by visiting your web browser settings.
+Krebit is a **user-centic protocol**. It uses Ceramic's Self.Id Decentralized Identity (DID) to enable users control their profiles and data-stores.
+
+A user can login with a **Non-Custodial ethereum wallet** and take ownership of their data.
+
+We currently support the Metamask extension, and a Krebit Wallet cached in the browser:
+
+<!-- tabs:start -->
+
+#### **Metamask**
+
+1. Download and install the Metamask extension for your browser: [https://metamask.io/download/](https://metamask.io/download/)
+
+#### **Krebit Wallet**
+
+?> **Where is my Krebit Wallet stored?** We use the Local Storage in your browser to store and encrypt the Krebit Wallet information locally with a twelve-word seed phrase and a password you provide, that we **never** send to our servers. Please read the full [Terms of Service](https://krebit.id/#/terms) and [Privacy Policy](https://krebit.id/#/privacy) for more details.
+
+Local Storage, including Javascript-enabled localStorage, is a typical way for a website to store a small file of letters and numbers in your browser. Local Storage items are deleted when the website that stored them deletes them. You can also delete Local Storage from your browser at any time you like by visiting your web browser settings.
+
+#### **Multi-Sig**
+
+Not supported yet
+
+<!-- tabs:end -->
+
+!> **Your Keys, your Wallet:** Please make sure to save a copy of the Wallet's 12 seed words, it is the **only** way to recover your wallet and access to your DID in case of browser cache clearing, app data lost, or forgetting the PIN.
 
 ## Claim Credentials
 

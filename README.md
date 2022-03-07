@@ -57,11 +57,21 @@ Krebit uses a Triple Layer architecture of scalable, decentralized, privacy pres
 
 - P2P Storage and Chat
 
+Ceramic Netork offers a mutable data stream storage system on top of IPFS.
+
+Data availability among nodes is achieved through libp2p pubsub so that as long as one node subscribed to the pubsub topic has the needed commit log, data will be available for query among all the nodes.
+
+Long-term data retention is guaranteed through Ceramic’s blockchain anchoring and an IPFS data pinning service.
+
 - Off-Chain Signed Data
+
+EIP712 vc
 
 - Blockchain Contracts
 
-![Krebit-Architecture](/img/Krebit-Architecture.png ":size=50%")
+Solidity: EVM and zkEVM
+
+![Krebit-Architecture](/img/Krebit-Architecture.png ":size=500")
 
 Learn More:
 

@@ -28,14 +28,21 @@ Data models are open standards created by the community that form the basis of d
 
 The CredentialRegistry holds the list of claimed [ClaimedCredentials](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/ClaimedCredential.json) and the [VerifiableCredentials](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/VerifiableCredential.json) issued by the user:
 
-| Property | Description                             | Value                                                                                                                                                                        | Max Size | Required | Example |
-| -------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------- |
-| claimed  | List of claims made by this DID         | array of ceramic:// links to [ClaimedCredentials](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/ClaimedCredential.json) tiles       |          | false    |         |
-| issued   | List of attestations issued by this DID | array of ceramic:// links to [VerifiableCredentials](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/VerifiableCredential.json) tiles |          | false    |         |
+#### claimedCredentials
 
-A [ClaimedCredentials](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/ClaimedCredential.json) represents a specific, factually-oriented claim that could be used as the Id and CredentialSubject of a Verifiable Credential.
+| Property | Description                     | Value                                                                                                                                                                 | Max Size | Required | Example |
+| -------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------- |
+| claimed  | List of claims made by this DID | array of ceramic:// links to [ClaimedCredential](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/ClaimedCredential.json) tiles |          | false    |         |
 
-A [VerifiableCredentials](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/VerifiableCredential.json) is fact-checking review/attestation of claims made (or reported) in a Claim, following the [W3C-VC-datamodel](https://www.w3.org/TR/vc-data-model).
+A [ClaimedCredential](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/ClaimedCredential.json) represents a specific, factually-oriented claim that could be used as the Id and CredentialSubject of a Verifiable Credential.
+
+#### issuedCredentials
+
+| Property | Description                             | Value                                                                                                                                                                       | Max Size | Required | Example |
+| -------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------- |
+| issued   | List of attestations issued by this DID | array of ceramic:// links to [VerifiableCredential](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/VerifiableCredential.json) tiles |          | false    |         |
+
+A [VerifiableCredential](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/VerifiableCredential.json) is fact-checking review/attestation of claims made (or reported) in a Claim, following the [W3C-VC-datamodel](https://www.w3.org/TR/vc-data-model).
 
 ### Installation
 
