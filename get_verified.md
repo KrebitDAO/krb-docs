@@ -22,15 +22,25 @@ We currently support the Metamask extension, and a Krebit Wallet cached in the b
 
 <!-- tabs:start -->
 
-#### **Metamask**
-
-1. Download and install the Metamask extension for your browser: [https://metamask.io/download/](https://metamask.io/download/)
-
 #### **Krebit Wallet**
+
+1. Create Wallet:
+
+[filename](/guides/Create-Krebit-Wallet.mp4" ":include :type=video controls width=200")
 
 ?> **Where is my Krebit Wallet stored?** We use the Local Storage in your browser to store and encrypt the Krebit Wallet information locally with a twelve-word seed phrase and a password you provide, that we **never** send to our servers. Please read the full [Terms of Service](https://krebit.id/#/terms) and [Privacy Policy](https://krebit.id/#/privacy) for more details.
 
+2. Login With Wallet
+
+[filename](/guides/Login-with-Krebit-Wallet.mp4" ":include :type=video controls width=200")
+
+3. Deleting Wallet
+
 Local Storage, including Javascript-enabled localStorage, is a typical way for a website to store a small file of letters and numbers in your browser. Local Storage items are deleted when the website that stored them deletes them. You can also delete Local Storage from your browser at any time you like by visiting your web browser settings.
+
+#### **Metamask**
+
+1. Download and install the Metamask extension for your browser: [https://metamask.io/download/](https://metamask.io/download/)
 
 #### **Multi-Sig**
 

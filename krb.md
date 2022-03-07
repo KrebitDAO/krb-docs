@@ -28,7 +28,7 @@ The way to earn KRB token rewards is based on the Trust level that Issuer users 
 
 Rewards are based on the formula:
 
-![krebit-formula-blue](/img/krebit-formula-blue.png ":size=30%")
+![krebit-formula-blue](/img/krebit-formula-blue.png ":size=300")
 
 Inspired in the [CoreTrust1](https://dl.acm.org/doi/10.1145/2389176.2389208) model of Credit Flow, where a mathematical and/or physical relationship among credit, risk, and trust was established so that it can be properly evaluated: credit = risk × trust.
 
