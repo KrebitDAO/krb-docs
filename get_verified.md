@@ -26,13 +26,13 @@ We currently support the Metamask extension, and a Krebit Wallet cached in the b
 
 1. Create Wallet:
 
-[filename](/guides/Create-Krebit-Wallet.mp4" ":include :type=video controls width=200")
+[filename](/guides/Create-Krebit-Wallet.mp4" ":include :type=video controls width=250")
 
 ?> **Where is my Krebit Wallet stored?** We use the Local Storage in your browser to store and encrypt the Krebit Wallet information locally with a twelve-word seed phrase and a password you provide, that we **never** send to our servers. Please read the full [Terms of Service](https://krebit.id/#/terms) and [Privacy Policy](https://krebit.id/#/privacy) for more details.
 
 2. Login With Wallet
 
-[filename](/guides/Login-with-Krebit-Wallet.mp4" ":include :type=video controls width=200")
+[filename](/guides/Login-with-Krebit-Wallet.mp4" ":include :type=video controls width=250")
 
 3. Deleting Wallet
 
@@ -52,10 +52,22 @@ Not supported yet
 
 ## Claim Credentials
 
-For example, a user can claim a social network profile by posting the KRB address on the public bio (proof that the user has control over the identity) and ask for another member’s confirmation or ask to have a claim disputed via DAO vote approval.
+For example, a user can claim a social network profile by posting the KRB address on the public bio (proof that the user has control over the identity) and ask for another member’s confirmation:
+
+[filename](/guides/Create-Krebit-Identity-Claims.mp4" ":include :type=video controls width=250")
 
 ## Request Verification
 
-Identity proofs are social and based on trust; It means you must get attestation from some of the previously accepted users, i.e. verifiers. These verifiers ask you to reproduce your claim via a P2P encrypted chat on Krebit dApp. After collecting enough trust in the form of KRB, the user is recognized as a valid and unique one.
+Request verification from a Krebit DAO verified Issuer:
+
+[filename](/guides/Request-Krebit-Verification.mp4" ":include :type=video controls width=250")
+
+Identity proofs are social and based on trust; It means you must get attestation from some of the previously accepted users, i.e. verifiers. These verifiers ask you to reproduce your claim via a P2P encrypted chat on Krebit dApp.
 
 ## Register Verifiable Credential
+
+Get the VerifiableCredential from the Issuer and register it on-chain to earn KRB tokens:
+
+[filename](/guides/Register-Krebit-Verifiable-Credentials.mp4" ":include :type=video controls width=250")
+
+After collecting enough trust in the form of KRB, the user is recognized as a valid and unique one.
