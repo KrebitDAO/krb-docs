@@ -10,17 +10,17 @@ Flow of attestations:
 
 1. User creates a claim record on Seld.Id. The Claim will be saved in Ceramic’s Seld.Id decentralized protocol, encrypted with the user’s DID identity.
 
-2. User posts claim url to any market of attestators (i.e. krebit Deals)
+2. User selects an Issuer from the market
 
-3. An attestator is matched with some criteria (escrow cost/KRB balance)
+3. User sends an encrypted claim to the Issuer
 
-4. User adds attestator as recipient of encrypted claim data
+4. Issuer validates the data, signs the Verifiable Credential and sends it back
 
-5. Attestator validates the data, signs the Verifiable Credential and sends attestation
+[filename](/guides/Issue-Krebit-Credentials.mp4" ":include :type=video controls width=250")
 
-6. User receives and registers the attestation to the claims record in the Krebit-Token contract
+5. User receives and registers the Verifiable Credential to the credentials registry in the Krebit-Token contract
 
-7. Both User and Attestator are rewarded based on formula
+6. Both User and Attestator are rewarded based on formula
 
 An Attestation has the following minimum attributes:
 

@@ -42,6 +42,10 @@ Local Storage, including Javascript-enabled localStorage, is a typical way for a
 
 1. Download and install the Metamask extension for your browser: [https://metamask.io/download/](https://metamask.io/download/)
 
+2. Login With Metamask
+
+[filename](/guides/Login-with-Metamask.mp4" ":include :type=video controls width=250")
+
 #### **Multi-Sig**
 
 Not supported yet
