@@ -20,42 +20,32 @@
 
 Krebit uses Ceramic's Self.Id Decentralized Identity (DID) to enable users control their profiles and data-stores.
 
-?> The [ceramic/datamodels](https://github.com/ceramicstudio/datamodels/pull/32) repository hosts the [Krebit] Credential Registry open data-model.
+?> The [ceramic/datamodels](https://github.com/ceramicstudio/datamodels/tree/main/models/verifiable-credentials) repository hosts the [Krebit] Verifiable Credentials registry open data-model.
 
 Data models are open standards created by the community that form the basis of data composability on Ceramic. When multiple applications reuse the same data model, they get access to the same data-store.
 
 ### Data Model
 
-The CredentialRegistry holds the list of claimed [ClaimedCredentials](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/ClaimedCredential.json) and the [VerifiableCredentials](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/VerifiableCredential.json) issued by the user:
+The VerifiableCredentials data-model provides 3 definitions for the users's DID-datastore:
 
-#### claimedCredentials
+- claimedCredentials - [ClaimedCredentials](https://github.com/ceramicstudio/datamodels/blob/main/models/verifiable-credentials/schemas/ClaimedCredentials.json) : self-issued by the user.
+- issuedCredentials - [IssuedCredentials](https://github.com/ceramicstudio/datamodels/blob/main/models/verifiable-credentials/schemas/IssuedCredentials.json) : issued to other users.
+- heldCredentials - [HeldCredentials](https://github.com/ceramicstudio/datamodels/blob/main/models/verifiable-credentials/schemas/HeldCredentials.json) : received from issuers.
 
-| Property | Description                     | Value                                                                                                                                                                 | Max Size | Required | Example |
-| -------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------- |
-| claimed  | List of claims made by this DID | array of ceramic:// links to [ClaimedCredential](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/ClaimedCredential.json) tiles |          | false    |         |
-
-A [ClaimedCredential](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/ClaimedCredential.json) represents a specific, factually-oriented claim that could be used as the Id and CredentialSubject of a Verifiable Credential.
-
-#### issuedCredentials
-
-| Property | Description                             | Value                                                                                                                                                                       | Max Size | Required | Example |
-| -------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------- |
-| issued   | List of attestations issued by this DID | array of ceramic:// links to [VerifiableCredential](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/VerifiableCredential.json) tiles |          | false    |         |
-
-A [VerifiableCredential](https://github.com/KrebitDAO/datamodels/blob/main/packages/credential-registry/schemas/VerifiableCredential.json) is fact-checking review/attestation of claims made (or reported) in a Claim, following the [W3C-VC-datamodel](https://www.w3.org/TR/vc-data-model).
+Each of these definitions has an array of [VerifiableCredential](https://github.com/ceramicstudio/datamodels/blob/main/models/verifiable-credentials/schemas/VerifiableCredential.json) stream IDs.
 
 ### Installation
 
 ```console
 $ npm install @self.id/web
-$ npm install @datamodels/credential-registry
+$ npm install @datamodels/verifiable-credentials
 ```
 
 ### Login with Wallet to DID
 
 ```javascript
 import { EthereumAuthProvider, SelfID } from "@self.id/web";
-import { model as credentialRegistryModel } from "@datamodels/credential-registry";
+import { model as credentialRegistryModel } from "@datamodels/verifiable-credentials";
 
 // The following assumes there is an injected `window.ethereum` provider
 const addresses = await window.ethereum.request({
