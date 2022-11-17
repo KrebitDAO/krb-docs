@@ -11,7 +11,7 @@ It provides functions for creating off-chain [Verifiable-Credentials] in Ceramic
 
 ### Code examples
 
-https://github.com/KrebitDAO/krebit/tree/develop/apps/examples
+https://github.com/KrebitDAO/krebit/tree/develop/examples
 
 ### Installation
 
