@@ -1,8 +1,8 @@
 - [Overview](/#main)
 - [Get Verified](get_verified)
 - [Become an Issuer](issuer)
-- [KRB Token](krb)
 - [Web3 Developers](developers)
+- [KRB Token](krb)
 - [Governance DAO](dao)
 - [Glossary](_glossary)
 - **Links**
@@ -11,6 +11,6 @@
   [Blog](https://publish0x.com/krebit)
 
   [![GitHub](/img/github.png ":size=20")](https://github.com/KrebitDAO)
-  [![Twitter](/img/twitter.png ":size=30")](https://twitter.com/KrebitDAO)
+  [![Twitter](/img/twitter.png ":size=30")](https://twitter.com/KrebitID)
   [![Discord](/img/discord.png ":size=30")](https://discord.gg/y7sMYVjxrd)
   [![Gitcoin](/img/gitcoin.png ":size=30")](https://gitcoin.co/grants/3522/krebit)
