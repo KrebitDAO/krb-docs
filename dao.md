@@ -58,10 +58,10 @@ Krebit mitigates all of them and creates a **pseudonymous economy** for users to
 
 11. Krebit is not going to reinvent the wheel. Instead, we intend to use the best existing tools and best practices for each component of the architecture.
 
-## About Krebit Inc.
+## About Krebit ID LLC
 
-Krebit Inc. (a Delaware S Corp) operates the Krebit DApp and promotes the Krebit DAO.
+Krebit ID LLC (a Delaware S Corp) operates the Krebit DApp and promotes the Krebit DAO.
 
-The Krebit Inc. company was formed to house the Krebit community's key intangible assets, such as trademarks and code copyrights, and it operates solely on the basis of objective and rigid statutes that define its mandate.
+The Krebit ID LLC company was formed to house the Krebit community's key intangible assets, such as trademarks and code copyrights, and it operates solely on the basis of objective and rigid statutes that define its mandate.
 
 Its purpose is to safeguard what cannot be technologically decentralized and bootstrapping the system to ensure that it can survive as a fully decentralized organization that can successfully thrive on its own.

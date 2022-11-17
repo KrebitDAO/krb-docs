@@ -8,9 +8,9 @@ Decentralized Reputation (DeRep) has great challenges: sovereign-identities, rep
 
 ## Self Sovereign-Identity
 
-Krebit is a **user-centic protocol**. It uses Ceramic's Self.Id Decentralized Identity (DID) to enable users control their profiles and data-stores.
+Krebit is a **user-centic protocol**. It uses Ceramic's Decentralized Identity (DID) to enable users control their profiles and data-stores.
 
-A user can login with a **Non-Custodial ethereum wallet** and take ownership of their data. Ceramic also supports the main public blockchains, making the user data effectively **portable across the Web3**. An example of a DID is `did::example:123456abcdef`.
+A user can login with a **Non-Custodial ethereum wallet** and take ownership of their data. Ceramic also supports the main public blockchains, making the user data effectively **portable across the Web3**. An example of a DID is `did::pkh:123456abcdef`.
 
 By using this **open, multi-chain data-model**, Krebit users are able to manage their identities and Web3 developers are able to obtain real-time reputation of an identity owner. Web3 dApps are also able to create claims, verify them and register them, all from common known data-models.
 

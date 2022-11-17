@@ -1,6 +1,219 @@
 # Web3 Developers
 
-## Reputation in your dApp
+## Reputation Passport SDK
+
+?> Using the [krebitdao/reputation-passport](https://www.npmjs.com/package/@krebitdao/reputation-passport) SDK package, you can easily read and write [Krebit] Verifiable Credentials for your users.
+
+It provides functions for creating off-chain [Verifiable-Credentials] in Ceramic that can be verified on-chain with [krebit-contracts].
+
+[krebit-contracts]: https://github.com/KrebitDAO/krb-contracts
+[verifiable-credentials]: https://github.com/ceramicstudio/datamodels/tree/main/models/verifiable-credentials
+
+### Installation
+
+```console
+$ npm install -s @krebitdao/reputation-passport
+```
+
+### Read-Only Passport
+
+```javascript
+import krebit from "@krebitdao/reputation-passport";
+
+const passport = new krebit.core.Passport({
+  ceramicUrl: "https://ceramic-clay.3boxlabs.com",
+});
+passport.read(address);
+
+const profile = await passport.getProfile();
+console.log("profile: ", profile);
+
+const credentials = await passport.getCredentials();
+console.log("credentials: ", credentials);
+
+const reputation = await passport.getReputation();
+console.log("reputation: ", reputation);
+
+const stamps = await passport.getStamps(10, "DigitalProperty");
+console.log("stamps: ", stamps);
+```
+
+### Initialize Ethereum Provider
+
+```javascript
+import krebit from '@krebitdao/reputation-passport';
+
+// Example on Browser:
+const connectWeb3 = async () => {
+  if (!window) return;
+  const ethereum = (window as any).ethereum;
+
+  if (!ethereum) return;
+
+  const addresses = await ethereum.request({
+    method: 'eth_requestAccounts'
+  });
+  const address = addresses[0];
+  const ethProvider = await Krebit.lib.ethereum.getWeb3Provider();
+  const wallet = ethProvider.getSigner();
+  return { address, wallet, ethProvider };
+};
+
+// NODE JS Example:
+export const connect = async () => {
+  try {
+    const ethProvider = Krebit.lib.ethereum.getProvider();
+
+    let wallet: ethers.Wallet;
+
+    try {
+      // Create wallet from ethereum seed
+      const unlockedWallet = ethers.Wallet.fromMnemonic(SERVER_ETHEREUM_SEED);
+      // Connect wallet with provider for signing the transaction
+      wallet = unlockedWallet.connect(ethProvider);
+    } catch (error) {
+      console.error('Failed to use local Wallet: ', error);
+    }
+    if (wallet && wallet.address) {
+      console.log('address: ', wallet.address);
+      ethProvider.setWallet(wallet);
+      return { wallet, ethProvider };
+    }
+    return undefined;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+```
+
+### Initialize Issuer
+
+```javascript
+import krebit from "@krebitdao/reputation-passport";
+const { wallet, ethProvider } = await connect();
+
+const Issuer = new krebit.core.Krebit({
+  wallet,
+  ethProvider,
+  network: "mumbai",
+  address: wallet.address,
+  ceramicUrl: "https://ceramic-clay.3boxlabs.com",
+});
+const did = await Issuer.connect();
+```
+
+### Issue Credential
+
+```javascript
+const getClaim = async (toAddress: string) => {
+  const badgeValue = {
+    communityId: 'My Community',
+    name: 'Community Badge Name',
+    imageUrl: 'ipfs://asdf',
+    description: 'Badge for users that meet some criteria',
+    skills: [{ skillId: 'participation', score: 100 }],
+    xp: '1'
+  };
+
+  const expirationDate = new Date();
+  const expiresYears = 3;
+  expirationDate.setFullYear(expirationDate.getFullYear() + expiresYears);
+  console.log('expirationDate: ', expirationDate);
+
+  const claim = {
+    id: `quest-123`,
+    ethereumAddress: toAddress,
+    did: `did:pkh:eip155:1:${toAddress}`
+    type: 'questBadge',
+    value: badgeValue,
+    tags: ['quest', 'badge', 'Community'],
+    typeSchema: 'https://github.com/KrebitDAO/schemas/questBadge',
+    expirationDate: new Date(expirationDate).toISOString()
+  };
+};
+
+const claim = await getClaim(toAddress);
+const issuedCredential = await Issuer.issue(claim);
+```
+
+### Verify Credential
+
+```javascript
+console.log(
+  "Verifying credential:",
+  await Issuer.checkCredential(issuedCredential)
+);
+```
+
+### Add Credential to My Passport
+
+```javascript
+import krebit from "@krebitdao/reputation-passport";
+const { wallet, ethProvider } = await connectWeb3();
+
+const passport = new krebit.core.Passport({
+  ethProvider: ethProvider.provider,
+  address,
+  ceramicUrl: "https://ceramic-clay.3boxlabs.com",
+});
+await passport.connect();
+
+const addedCredentialId = await passport.addCredential(issuedCredential);
+console.log("addedCredentialId: ", addedCredentialId);
+```
+
+### Issue Ecrypted Credential
+
+With Lit protocol:
+
+```javascript
+import krebit from '@krebitdao/reputation-passport';
+import LitJsSdk from "@lit-protocol/sdk-browser"; // Added Lit
+
+const { wallet, ethProvider } = await connectWeb3();
+
+const Issuer = new krebit.core.Krebit({
+        wallet,
+        ethProvider: ethProvider.provider,
+        address,
+        ceramicUrl: 'https://ceramic-clay.3boxlabs.com',
+        litSdk: LitJsSdk // Added Lit
+      });
+
+const getEncryptedClaim = async (toAddress: string) => {
+  const privateValue = {
+    secretValue: 'My Secret',
+  };
+
+  const expirationDate = new Date();
+  const expiresYears = 3;
+  expirationDate.setFullYear(expirationDate.getFullYear() + expiresYears);
+  console.log('expirationDate: ', expirationDate);
+
+  const claim = {
+    id: `custom-123`,
+    ethereumAddress: toAddress,
+    type: 'custom',
+    value: privateValue,
+    tags: ['tag1', 'tag2'],
+    typeSchema: '<type url>',
+    expirationDate: new Date(expirationDate).toISOString()
+    encrypt: 'lit' as 'lit' // Added Lit
+  };
+};
+
+const claim = await getEncryptedClaim(toAddress);
+const issuedCredential = await Issuer.issue(claim);
+```
+
+### Decrypt Credential
+
+```javascript
+const decrypted = await Issuer.decryptClaim(issuedCredential);
+console.log("Decrypted:", decrypted);
+```
+
+## Other libraries
 
 - **Let your users manage their identity Claims** [using Ceramic's datamodels and Self.ID](developers#ceramic-datamodels)
 
@@ -10,13 +223,7 @@
 
 - **Check the aggregated reputation of an identity owner off-chain** [using the KRB-Token Subgraph](developers#contract-subgraph).
 
-### Use Case 1: Decentralized KYC/AML
-
-### Use Case 2: Restrict access to Adult/NSFW pages
-
-### Use Case 3: Anti-Sybil prevention
-
-## Ceramic Datamodels
+### Ceramic Datamodels
 
 Krebit uses Ceramic's Self.Id Decentralized Identity (DID) to enable users control their profiles and data-stores.
 
@@ -24,7 +231,7 @@ Krebit uses Ceramic's Self.Id Decentralized Identity (DID) to enable users contr
 
 Data models are open standards created by the community that form the basis of data composability on Ceramic. When multiple applications reuse the same data model, they get access to the same data-store.
 
-### Data Model
+#### Data Model
 
 The VerifiableCredentials data-model provides 3 definitions for the users's DID-datastore:
 
@@ -34,14 +241,14 @@ The VerifiableCredentials data-model provides 3 definitions for the users's DID-
 
 Each of these definitions has an array of [VerifiableCredential](https://github.com/ceramicstudio/datamodels/blob/main/models/verifiable-credentials/schemas/VerifiableCredential.json) stream IDs.
 
-### Installation
+#### Installation
 
 ```console
 $ npm install @self.id/web
 $ npm install @datamodels/verifiable-credentials
 ```
 
-### Login with Wallet to DID
+#### Login with Wallet to DID
 
 ```javascript
 import { EthereumAuthProvider, SelfID } from "@self.id/web";
@@ -61,14 +268,14 @@ const self = await SelfID.authenticate({
 });
 ```
 
-### Storing Claims
+#### Storing Claims
 
 Sample streams:
 
 - fullName ClaimedCredential: https://documint.net/kjzl6cwe1jw148duwupih6l1fmqbncvkzquhiie407e1f5kkv5isxvjkig9u3ma
 - olderThan ClaimedCredential: https://documint.net/kjzl6cwe1jw14aph1ar5pxyvtlosvfr3h109pg26ucbzqil8an1w27tkgi6x674
 
-### Storing Verifiable Credentials
+#### Storing Verifiable Credentials
 
 Sample VerifiableCredentials:
 
@@ -80,7 +287,7 @@ Learn more:
 - [Seld.ID SDK](https://developers.ceramic.network/reference/self-id/)
 - [DID DataStore](https://developers.ceramic.network/tools/glaze/did-datastore/)
 
-## eip712-vc SDK
+### eip712-vc SDK
 
 The [eip712-vc](https://github.com/KrebitDAO/eip712-vc) repository hosts the [Krebit] EIP712-VC tools, based on [W3C-Ethereum-EIP712-Signature-2021-Draft](https://w3c-ccg.github.io/ethereum-eip712-signature-2021-spec).
 
@@ -90,13 +297,13 @@ It provides functions for creating both W3C compliant Verifiable Credentials, an
 
 [krebit-contracts]: https://github.com/KrebitDAO/krb-contracts
 
-### Installation
+#### Installation
 
 ```console
 $ npm install -s @krebitdao/eip721-vc
 ```
 
-### Configuration
+#### Configuration
 
 Configuring the EIP712 Domain:
 
@@ -122,7 +329,7 @@ const eip712Domain = {
 const eip712vc = new EIP712VC(eip712Domain);
 ```
 
-### Create Credential
+#### Create Credential
 
 Creating Krebit Compatible EIP712 Verifiable Credentials:
 
@@ -182,7 +389,7 @@ const vc = await eip712vc.createEIP712VerifiableCredential(
 );
 ```
 
-### Verify Credential
+#### Verify Credential
 
 Verifying EIP712 Verifiable Credentials:
 
@@ -199,7 +406,7 @@ eip712vc.verifyEIP712Credential(
 );
 ```
 
-## Contract Subgraph
+### Contract Subgraph
 
 How to export Krebit reputation to web2 and web3 sites?
 
@@ -207,21 +414,19 @@ The [krb-subgraph](https://github.com/KrebitDAO/krb-subgraph) repository hosts t
 
 [openzeppelin subgraphs]: https://docs.openzeppelin.com/subgraphs/0.1.x/
 
-### Setup
+#### Setup
 
 You can use various GraphQL Client libraries to query the subgraph and populate your app with the data indexed by The Graph from the events originated in the KRB token Ethereum transactions.
 
 ?> Check The Graph documentation for [Querying from an Application](https://thegraph.com/docs/en/developer/querying-from-your-app/).
 
-### Rinkeby URLs
+#### Polygon URLs
 
-Explorer: https://thegraph.com/hosted-service/subgraph/krebit/krb-token-v01
+Mainnet: https://thegraph.com/hosted-service/subgraph/krebit/krb-matic-v1
 
-Queries (HTTP): https://api.thegraph.com/subgraphs/name/krebit/krb-token-v01
+Mumbai (testnet): https://thegraph.com/hosted-service/subgraph/krebit/krb-mumbai-v01
 
-Subscriptions (WS): wss://api.thegraph.com/subgraphs/name/krebit/krb-token-v01
-
-### Query examples
+#### Query examples
 
 Total supply and biggest token holders:
 
