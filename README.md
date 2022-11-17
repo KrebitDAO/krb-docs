@@ -73,6 +73,62 @@ Solidity: EVM and zkEVM
 
 ![Krebit-Architecture](/img/Krebit-Architecture.png ":size=500")
 
+## NFT Credentials
+
+- Opensea: https://opensea.io/collection/krebit-verifiable-credentials
+- Rarible: https://rarible.com/krebit-verifiable-credentials
+
+Mapping of Credentials vs ERC1155 NFT tokens:
+
+https://node401.krebit.id/metadata/all
+
+Example:
+
+```javascript
+    "AgeGT18": {
+        "name": "Age > 18",
+        "tokenId": "67635111694905454750656545562169396067333546840103698301069856292090375322325"
+    },
+    "Email": {
+        "name": "Email",
+        "tokenId": "40021678008535640475191734029493822943777967446419437373838192638048352067564"
+    },
+    "PhoneNumber": {
+        "name": "Phone Number",
+        "tokenId": "17262999309544526619391335994326136167734383564354599749789590225102621843354"
+    },
+    "Twitter": {
+        "name": "Twitter",
+        "tokenId": "77063689935824096560045109234073832972855346599201458371832518884974849092031"
+    },
+    "TwitterFollowersGT1K": {
+        "name": "Twitter Followers > 1K",
+        "tokenId": "89738448909262774762831709705569279227343536779743166698674193014930532264406"
+    },
+...
+    "Discord": {
+        "name": "Discord",
+        "tokenId": "109892553069226592861552127612525159059191555100102304293041004114913656473745"
+    },
+    "DiscordGuildOwner": {
+        "name": "Discord Guild Owner",
+        "tokenId": "93304639584400428281907059752986528361531082486641418130415124711700498336882"
+    },
+    "DiscordGuildMember": {
+        "name": "Discord Guild Member",
+        "tokenId": "4190401451428534333843180428082502793665468334666159661981442097195148040013"
+    },
+    "Github": {
+        "name": " Github",
+        "tokenId": "65519100179299519584334791948139958903579500130658539743567381861186592867363"
+    },
+    "GithubFollowersGT10": {
+        "name": " Github Followers > 10",
+        "tokenId": "31363295818865202011757849885724201111393346844268475356973931666873542272415"
+    },
+...
+```
+
 Learn More:
 
 - [KRB Token](krb)

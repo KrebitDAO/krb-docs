@@ -9,10 +9,57 @@ It provides functions for creating off-chain [Verifiable-Credentials] in Ceramic
 [krebit-contracts]: https://github.com/KrebitDAO/krb-contracts
 [verifiable-credentials]: https://github.com/ceramicstudio/datamodels/tree/main/models/verifiable-credentials
 
+### Code examples
+
+https://github.com/KrebitDAO/krebit/tree/develop/apps/examples
+
 ### Installation
 
 ```console
 $ npm install -s @krebitdao/reputation-passport
+```
+
+Peer dependencies for use on frontend(browwser):
+
+```console
+npm i ethers siwe @lit-protocol/sdk-browser @krebitdao/eip712-vc @krebitdao/reputation-passport
+```
+
+Peer dependencies for use on backend(nodejs):
+
+```console
+npm i ethers siwe @lit-protocol/sdk-nodejs @krebitdao/eip712-vc @krebitdao/reputation-passport
+```
+
+### Defalut config parameters
+
+Polygon testnet:
+
+```javascript
+const initialConfigTestnet = {
+  network: "mumbai",
+  rpcUrl:
+    "https://rpc-mumbai.maticvigil.com/v1/5de1e8fc6cabc2e7782450d3a1a2135b2710c50c",
+  graphUrl: "https://api.thegraph.com/subgraphs/name/krebit/krb-mumbai-v01",
+  ensGraphUrl: "https://api.thegraph.com/subgraphs/name/ensdomains/ens",
+  ceramicUrl: "https://ceramic-clay.3boxlabs.com",
+  publicUrl: "https://testnet.krebit.id",
+  biconomyKey: "", // for gasless transactions
+};
+```
+
+Polygon mainnet:
+
+```javascript
+const initialConfigMainnet = {
+  network: "polygon",
+  rpcUrl:
+    "https://rpc-mainnet.maticvigil.com/v1/5de1e8fc6cabc2e7782450d3a1a2135b2710c50c",
+  graphUrl: "https://api.thegraph.com/subgraphs/name/krebit/krb-matic-v1",
+  ensGraphUrl: "https://api.thegraph.com/subgraphs/name/ensdomains/ens",
+  ceramicUrl: "https://node1.orbis.club",
+  biconomyKey: "", // for gasless transactions
+};
 ```
 
 ### Read-Only Passport
@@ -21,7 +68,7 @@ $ npm install -s @krebitdao/reputation-passport
 import krebit from "@krebitdao/reputation-passport";
 
 const passport = new krebit.core.Passport({
-  ceramicUrl: "https://ceramic-clay.3boxlabs.com",
+  ceramicUrl: "https://ceramic-clay.3boxlabs.com", //overriding default config
 });
 passport.read(address);
 
