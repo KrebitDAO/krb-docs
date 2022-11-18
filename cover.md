@@ -10,7 +10,7 @@
 
 [Get Started](#main)
 [GitHub](https://github.com/KrebitDAO)
-[Testnet](https://testnet.krebit.id)
+[JOIN THE HACKATHON](https://orbisclub.notion.site/Web3-Social-Hackathon-Registration-1fff0db4dcbc43dcac135d0361e1ffc4)
 
 <iframe
     src="https://gateway.ipfscdn.io/ipfs/Qmcine1gpZUbQ73nk7ZGCcjKBVFYXrEtqrhujXk3HDQ6Nn/erc721.html?contract=0xf483eA425f0AafcEd379B2F65b1411Fe8491Dc38&chainId=137&theme=dark"
