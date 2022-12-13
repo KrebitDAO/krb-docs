@@ -10,4 +10,5 @@
 
 [Get Started](#main)
 [GitHub](https://github.com/KrebitDAO)
-[JOIN THE HACKATHON](https://orbis.club/web3-social-hackathon-dec-2022)
+[HACKATHON](https://orbis.club/web3-social-hackathon-dec-2022)
+[101 Classes](https://101.xyz/c/krebit)

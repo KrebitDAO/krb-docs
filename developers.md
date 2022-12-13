@@ -85,7 +85,7 @@ const stamps = await passport.getStamps(10, "DigitalProperty");
 console.log("stamps: ", stamps);
 ```
 
-### Initialize Ethereum Provider
+### Initialize_ethereumProvider
 
 ```javascript
 import krebit from '@krebitdao/reputation-passport';
@@ -93,7 +93,7 @@ import krebit from '@krebitdao/reputation-passport';
 // Example on Browser:
 const connectWeb3 = async () => {
   if (!window) return;
-  const ethereum = (window as any).ethereum;
+  const _ethereum= (window as any).ethereum;
 
   if (!ethereum) return;
 
@@ -114,7 +114,7 @@ export const connect = async () => {
     let wallet: ethers.Wallet;
 
     try {
-      // Create wallet from ethereum seed
+      // Create wallet from_ethereumseed
       const unlockedWallet = ethers.Wallet.fromMnemonic(SERVER_ETHEREUM_SEED);
       // Connect wallet with provider for signing the transaction
       wallet = unlockedWallet.connect(ethProvider);
@@ -139,14 +139,14 @@ export const connect = async () => {
 import krebit from "@krebitdao/reputation-passport";
 const { wallet, ethProvider } = await connect();
 
-const Issuer = new krebit.core.Krebit({
+const _Issuer = new krebit.core.Krebit({
   wallet,
   ethProvider,
   network: "mumbai",
   address: wallet.address,
   ceramicUrl: "https://ceramic-clay.3boxlabs.com",
 });
-const did = await Issuer.connect();
+const _did = await Issuer.connect();
 ```
 
 ### Issue Credential
@@ -167,10 +167,10 @@ const getClaim = async (toAddress: string) => {
   expirationDate.setFullYear(expirationDate.getFullYear() + expiresYears);
   console.log('expirationDate: ', expirationDate);
 
-  const claim = {
+  const _claim = {
     id: `quest-123`,
     ethereumAddress: toAddress,
-    did: `did:pkh:eip155:1:${toAddress}`
+   _did: `did:pkh:eip155:1:${toAddress}`
     type: 'questBadge',
     value: badgeValue,
     tags: ['quest', 'badge', 'Community'],
@@ -179,7 +179,7 @@ const getClaim = async (toAddress: string) => {
   };
 };
 
-const claim = await getClaim(toAddress);
+const _claim = await getClaim(toAddress);
 const issuedCredential = await Issuer.issue(claim);
 ```
 
@@ -219,7 +219,7 @@ import LitJsSdk from "@lit-protocol/sdk-browser"; // Added Lit
 
 const { wallet, ethProvider } = await connectWeb3();
 
-const Issuer = new krebit.core.Krebit({
+const _Issuer= new krebit.core.Krebit({
         wallet,
         ethProvider: ethProvider.provider,
         address,
@@ -237,7 +237,7 @@ const getEncryptedClaim = async (toAddress: string) => {
   expirationDate.setFullYear(expirationDate.getFullYear() + expiresYears);
   console.log('expirationDate: ', expirationDate);
 
-  const claim = {
+  const _claim = {
     id: `custom-123`,
     ethereumAddress: toAddress,
     type: 'custom',
@@ -249,7 +249,7 @@ const getEncryptedClaim = async (toAddress: string) => {
   };
 };
 
-const claim = await getEncryptedClaim(toAddress);
+const _claim = await getEncryptedClaim(toAddress);
 const issuedCredential = await Issuer.issue(claim);
 ```
 
@@ -457,13 +457,13 @@ eip712vc.verifyEIP712Credential(
 
 How to export Krebit reputation to web2 and web3 sites?
 
-The [krb-subgraph](https://github.com/KrebitDAO/krb-subgraph) repository hosts the KRB Token subgraph, based in [OpenZeppelin subgraphs], that can be used to easily query the KRB token balances of a user, as well as all the Verified Credentials and status from both an Ethereum Address, as well as an issuer or credential subject DID.
+The [krb-subgraph](https://github.com/KrebitDAO/krb-subgraph) repository hosts the KRB Token subgraph, based in [OpenZeppelin subgraphs], that can be used to easily query the KRB token balances of a user, as well as all the Verified Credentials and status from both an_ethereumAddress, as well as an_issueror credential subject DID.
 
 [openzeppelin subgraphs]: https://docs.openzeppelin.com/subgraphs/0.1.x/
 
 #### Setup
 
-You can use various GraphQL Client libraries to query the subgraph and populate your app with the data indexed by The Graph from the events originated in the KRB token Ethereum transactions.
+You can use various GraphQL Client libraries to query the subgraph and populate your app with the data indexed by The Graph from the events originated in the KRB token_ethereumtransactions.
 
 ?> Check The Graph documentation for [Querying from an Application](https://thegraph.com/docs/en/developer/querying-from-your-app/).
 
