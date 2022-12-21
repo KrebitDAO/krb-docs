@@ -9,10 +9,6 @@ It provides functions for creating off-chain [Verifiable-Credentials] in Ceramic
 [krebit-contracts]: https://github.com/KrebitDAO/krb-contracts
 [verifiable-credentials]: https://github.com/ceramicstudio/datamodels/tree/main/models/verifiable-credentials
 
-### Code examples
-
-https://github.com/KrebitDAO/krebit/tree/develop/examples
-
 ### Installation
 
 ```console
@@ -259,6 +255,35 @@ const issuedCredential = await Issuer.issue(claim);
 const decrypted = await Issuer.decryptClaim(issuedCredential);
 console.log("Decrypted:", decrypted);
 ```
+
+### Code examples
+
+https://github.com/KrebitDAO/krebit/tree/develop/examples
+
+## Reviews widget
+
+https://github.com/KrebitDAO/krb-widgets
+
+URL params:
+
+- krebiter=andresmontoya.eth
+- proofUrl=https://mirror.xyz/andresmontoya.eth
+- defaultSkills=["JavaScript","React"]
+
+Example:
+
+```html
+<iframe
+  src="https://widgets.krebit.id/review?krebiter=andresmontoya.eth&proofUrl=https://mirror.xyz/andresmontoya.eth&defaultSkills=[%27JavaScript%27,%20%27React%27]"
+  height="600"
+  width="600"
+  title="Krebiter"
+></iframe>
+```
+
+Output:
+
+<iframe src="https://widgets.krebit.id/review?krebiter=andresmontoya.eth&proofUrl=https://mirror.xyz/andresmontoya.eth&defaultSkills=[%27JavaScript%27,%20%27React%27]" height="600" width="600" title="Krebiter"></iframe>
 
 ## Other libraries
 
