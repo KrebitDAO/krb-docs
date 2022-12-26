@@ -173,6 +173,8 @@ const getClaim = async (toAddress: string) => {
     typeSchema: 'https://github.com/KrebitDAO/schemas/questBadge',
     expirationDate: new Date(expirationDate).toISOString()
   };
+
+  return _claim;
 };
 
 const _claim = await getClaim(toAddress);
