@@ -27,36 +27,7 @@ Peer dependencies for use on backend(nodejs):
 npm i ethers siwe @lit-protocol/sdk-nodejs @krebitdao/eip712-vc @krebitdao/reputation-passport
 ```
 
-### Defalut config parameters
-
-Polygon testnet:
-
-```javascript
-const initialConfigTestnet = {
-  network: "mumbai",
-  rpcUrl:
-    "https://rpc-mumbai.maticvigil.com/v1/5de1e8fc6cabc2e7782450d3a1a2135b2710c50c",
-  graphUrl: "https://api.thegraph.com/subgraphs/name/krebit/krb-mumbai-v01",
-  ensGraphUrl: "https://api.thegraph.com/subgraphs/name/ensdomains/ens",
-  ceramicUrl: "https://ceramic-clay.3boxlabs.com",
-  publicUrl: "https://testnet.krebit.id",
-  biconomyKey: "", // for gasless transactions
-};
-```
-
-Polygon mainnet:
-
-```javascript
-const initialConfigMainnet = {
-  network: "polygon",
-  rpcUrl:
-    "https://rpc-mainnet.maticvigil.com/v1/5de1e8fc6cabc2e7782450d3a1a2135b2710c50c",
-  graphUrl: "https://api.thegraph.com/subgraphs/name/krebit/krb-matic-v1",
-  ensGraphUrl: "https://api.thegraph.com/subgraphs/name/ensdomains/ens",
-  ceramicUrl: "https://node1.orbis.club",
-  biconomyKey: "", // for gasless transactions
-};
-```
+````
 
 ### Read-Only Passport
 
@@ -64,7 +35,7 @@ const initialConfigMainnet = {
 import krebit from "@krebitdao/reputation-passport";
 
 const passport = new krebit.core.Passport({
-  ceramicUrl: "https://ceramic-clay.3boxlabs.com", //overriding default config
+  network: "polygon",
 });
 passport.read(address);
 
@@ -79,7 +50,7 @@ console.log("reputation: ", reputation);
 
 const stamps = await passport.getStamps(10, "DigitalProperty");
 console.log("stamps: ", stamps);
-```
+````
 
 ### Initialize_ethereumProvider
 
@@ -135,14 +106,13 @@ export const connect = async () => {
 import krebit from "@krebitdao/reputation-passport";
 const { wallet, ethProvider } = await connect();
 
-const _Issuer = new krebit.core.Krebit({
+const Issuer = new krebit.core.Krebit({
   wallet,
   ethProvider,
-  network: "mumbai",
+  network: "polygon",
   address: wallet.address,
-  ceramicUrl: "https://ceramic-clay.3boxlabs.com",
 });
-const _did = await Issuer.connect();
+const did = await Issuer.connect();
 ```
 
 ### Issue Credential
@@ -150,35 +120,41 @@ const _did = await Issuer.connect();
 ```javascript
 const getClaim = async (toAddress: string) => {
   const badgeValue = {
-    communityId: 'My Community',
-    name: 'Community Badge Name',
-    imageUrl: 'ipfs://asdf',
-    description: 'Badge for users that meet some criteria',
-    skills: [{ skillId: 'participation', score: 100 }],
-    xp: '1'
+    entity: "My Community",
+    name: "Community Badge Name",
+    imageUrl: "ipfs://the-badge-image-url",
+    description: "Badge for recipient that meet some criteria",
+    skills: [{ skillId: "participation", score: 100 }],
+    xp: 10,
   };
 
   const expirationDate = new Date();
   const expiresYears = 3;
   expirationDate.setFullYear(expirationDate.getFullYear() + expiresYears);
-  console.log('expirationDate: ', expirationDate);
+  console.log("expirationDate: ", expirationDate);
 
-  const _claim = {
-    id: `quest-123`,
+  return {
+    id: `badge-123`,
     ethereumAddress: toAddress,
-   _did: `did:pkh:eip155:1:${toAddress}`
-    type: 'questBadge',
+    did: `did:pkh:eip155:1:${toAddress}`,
+    type: "Badge",
     value: badgeValue,
-    tags: ['quest', 'badge', 'Community'],
-    typeSchema: 'https://github.com/KrebitDAO/schemas/questBadge',
-    expirationDate: new Date(expirationDate).toISOString()
+    tags: ["Community"],
+    typeSchema: "krebit://schemas/badge",
+    expirationDate: new Date(expirationDate).toISOString(),
   };
-
-  return _claim;
 };
 
 const _claim = await getClaim(toAddress);
-const issuedCredential = await Issuer.issue(claim);
+const issuedCredential = await Issuer.issue(_claim);
+
+console.log("Issued credential:", issuedCredential);
+
+const issuedCredentialId = await walletInformation.passport.addIssued(
+  issuedCredential
+);
+
+console.log("Issued credential id:", issuedCredentialId);
 ```
 
 ### Verify Credential
@@ -217,7 +193,7 @@ import LitJsSdk from "@lit-protocol/sdk-browser"; // Added Lit
 
 const { wallet, ethProvider } = await connectWeb3();
 
-const _Issuer= new krebit.core.Krebit({
+const Issuer= new krebit.core.Krebit({
         wallet,
         ethProvider: ethProvider.provider,
         address,
@@ -235,7 +211,7 @@ const getEncryptedClaim = async (toAddress: string) => {
   expirationDate.setFullYear(expirationDate.getFullYear() + expiresYears);
   console.log('expirationDate: ', expirationDate);
 
-  const _claim = {
+  return {
     id: `custom-123`,
     ethereumAddress: toAddress,
     type: 'custom',
@@ -248,7 +224,7 @@ const getEncryptedClaim = async (toAddress: string) => {
 };
 
 const _claim = await getEncryptedClaim(toAddress);
-const issuedCredential = await Issuer.issue(claim);
+const issuedCredential = await Issuer.issue(_claim);
 ```
 
 ### Decrypt Credential

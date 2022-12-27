@@ -5,7 +5,7 @@
 [Ceramic](https://ceramic.network/) is a decentralized, open source platform for creating, hosting, and
 sharing streams of data.
 
-##### Claim
+##### Credential Claim
 
 A claim is a statement about a subject, e.g. about their identity, location, accomplishments, owned property, etc.
 
@@ -14,7 +14,7 @@ A claim is a statement about a subject, e.g. about their identity, location, acc
 A DAO (Decentralized Autonomous Organization) is a self-organizing online
 community that uses blockchains like Ethereum to manage its funds securely and make collective decisions on the future of the organization
 
-##### DID
+##### DID(Decentralized Identifier)
 
 A DID(Decentralized Identifier) is a portable, globally unique, URL-based identifier, associated with an entity. DIDs enable entities to prove control over them by authenticating using cryptographic proofs such as digital signatures. An example of aDID is `did::example:123456abcdef`.
 
@@ -26,7 +26,7 @@ A DID(Decentralized Identifier) is a portable, globally unique, URL-based identi
 
 [Self.Id](https://self.id/) is a multi-platform identity protocol for web3 decentralized user profiles on top of the Ceramic Network.
 
-##### Issuer
+##### Credential Issuer
 
 A role an entity performs by asserting and verifying claims about one or more
 subjects, creating a verifiable credential from these claims, and transmitting the verifiable credential to a subject or holder. Example issuers include corporations, non-profit organizations, trade associations, governments, and individuals.
