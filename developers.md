@@ -27,16 +27,12 @@ Peer dependencies for use on backend(nodejs):
 npm i ethers siwe @lit-protocol/sdk-nodejs @krebitdao/eip712-vc @krebitdao/reputation-passport
 ```
 
-````
-
 ### Read-Only Passport
 
 ```javascript
 import krebit from "@krebitdao/reputation-passport";
 
-const passport = new krebit.core.Passport({
-  network: "polygon",
-});
+const passport = new krebit.core.Passport();
 passport.read(address);
 
 const profile = await passport.getProfile();
@@ -50,9 +46,9 @@ console.log("reputation: ", reputation);
 
 const stamps = await passport.getStamps(10, "DigitalProperty");
 console.log("stamps: ", stamps);
-````
+```
 
-### Initialize_ethereumProvider
+### Initialize ethereumProvider
 
 ```javascript
 import krebit from '@krebitdao/reputation-passport';
@@ -60,7 +56,7 @@ import krebit from '@krebitdao/reputation-passport';
 // Example on Browser:
 const connectWeb3 = async () => {
   if (!window) return;
-  const _ethereum= (window as any).ethereum;
+  const ethereum= (window as any).ethereum;
 
   if (!ethereum) return;
 
@@ -81,8 +77,8 @@ export const connect = async () => {
     let wallet: ethers.Wallet;
 
     try {
-      // Create wallet from_ethereumseed
-      const unlockedWallet = ethers.Wallet.fromMnemonic(SERVER_ETHEREUM_SEED);
+      // Create wallet fromethereumseed
+      const unlockedWallet = ethers.Wallet.fromMnemonic(SERVERethereum_SEED);
       // Connect wallet with provider for signing the transaction
       wallet = unlockedWallet.connect(ethProvider);
     } catch (error) {
@@ -460,13 +456,13 @@ eip712vc.verifyEIP712Credential(
 
 How to export Krebit reputation to web2 and web3 sites?
 
-The [krb-subgraph](https://github.com/KrebitDAO/krb-subgraph) repository hosts the KRB Token subgraph, based in [OpenZeppelin subgraphs], that can be used to easily query the KRB token balances of a user, as well as all the Verified Credentials and status from both an_ethereumAddress, as well as an_issueror credential subject DID.
+The [krb-subgraph](https://github.com/KrebitDAO/krb-subgraph) repository hosts the KRB Token subgraph, based in [OpenZeppelin subgraphs], that can be used to easily query the KRB token balances of a user, as well as all the Verified Credentials and status from both anethereumAddress, as well as an_issueror credential subject DID.
 
 [openzeppelin subgraphs]: https://docs.openzeppelin.com/subgraphs/0.1.x/
 
 #### Setup
 
-You can use various GraphQL Client libraries to query the subgraph and populate your app with the data indexed by The Graph from the events originated in the KRB token_ethereumtransactions.
+You can use various GraphQL Client libraries to query the subgraph and populate your app with the data indexed by The Graph from the events originated in the KRB tokenethereumtransactions.
 
 ?> Check The Graph documentation for [Querying from an Application](https://thegraph.com/docs/en/developer/querying-from-your-app/).
 

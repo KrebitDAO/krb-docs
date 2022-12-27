@@ -18,7 +18,7 @@ community that uses blockchains like Ethereum to manage its funds securely and m
 
 A DID(Decentralized Identifier) is a portable, globally unique, URL-based identifier, associated with an entity. DIDs enable entities to prove control over them by authenticating using cryptographic proofs such as digital signatures. An example of aDID is `did::example:123456abcdef`.
 
-##### Ethereum
+##### Ethereum Network
 
 [Ethereum](http://ethereum.org) is a decentralized, open-source blockchain with smart contract functionality. Ether is the native cryptocurrency of the platform.
 
