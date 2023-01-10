@@ -1,5 +1,31 @@
 # Web3 Developers
 
+## Reviews widget
+
+https://github.com/KrebitDAO/krb-widgets
+
+URL params:
+
+- krebiter=andresmontoya.eth
+- proofUrl=https://mirror.xyz/andresmontoya.eth
+- defaultSkills=["JavaScript","React"]
+- isDarkMode=false | true
+
+Example:
+
+```html
+<iframe
+  src="https://widgets.krebit.id/review?isDarkMode=false&krebiter=andresmontoya.eth&proofUrl=https://mirror.xyz/andresmontoya.eth&defaultSkills=[%27JavaScript%27,%20%27React%27]"
+  height="600"
+  width="600"
+  title="Krebiter"
+></iframe>
+```
+
+Output:
+
+<iframe src="https://widgets.krebit.id/review?krebiter=andresmontoya.eth&proofUrl=https://mirror.xyz/andresmontoya.eth&defaultSkills=[%27JavaScript%27,%20%27React%27]" height="600" width="600" title="Krebiter"></iframe>
+
 ## Reputation Passport SDK
 
 ?> Using the [krebitdao/reputation-passport](https://www.npmjs.com/package/@krebitdao/reputation-passport) SDK package, you can easily read and write [Krebit] Verifiable Credentials for your users.
@@ -233,31 +259,6 @@ console.log("Decrypted:", decrypted);
 ### Code examples
 
 https://github.com/KrebitDAO/krebit/tree/develop/examples
-
-## Reviews widget
-
-https://github.com/KrebitDAO/krb-widgets
-
-URL params:
-
-- krebiter=andresmontoya.eth
-- proofUrl=https://mirror.xyz/andresmontoya.eth
-- defaultSkills=["JavaScript","React"]
-
-Example:
-
-```html
-<iframe
-  src="https://widgets.krebit.id/review?krebiter=andresmontoya.eth&proofUrl=https://mirror.xyz/andresmontoya.eth&defaultSkills=[%27JavaScript%27,%20%27React%27]"
-  height="600"
-  width="600"
-  title="Krebiter"
-></iframe>
-```
-
-Output:
-
-<iframe src="https://widgets.krebit.id/review?krebiter=andresmontoya.eth&proofUrl=https://mirror.xyz/andresmontoya.eth&defaultSkills=[%27JavaScript%27,%20%27React%27]" height="600" width="600" title="Krebiter"></iframe>
 
 ## Other libraries
 
